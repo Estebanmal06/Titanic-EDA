@@ -1,0 +1,40 @@
+# Exploratory Data Analysis (EDA) - Titanic Dataset
+
+## 1. Import Libraries
+```python
+# Import necessary libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+## 2. Load the Dataset
+```python
+# Load the Titanic dataset
+df = pd.read_csv('data/train.csv')
+
+# Display the first few rows of the dataset
+df.head()
+
+
+## 3. Data Cleaning and Preprocessing
+```python
+# Check for missing values
+df.isnull().sum()
+
+# Fill missing values or drop columns
+df['Age'].fillna(df['Age'].mean(), inplace=True)
+df.drop(columns=['Cabin'], inplace=True)
+
+## 4. Data Exploration and Visualization
+```python
+# Explore basic statistics
+df.describe()
+
+# Visualize the distribution of the 'Age' column
+sns.histplot(df['Age'])
+plt.title('Age Distribution')
+plt.show()
+
+## 5. Insights and Conclusions
+- Discuss the key findings from the data, like the proportion of survivors, age distribution, and other patterns you discover.
